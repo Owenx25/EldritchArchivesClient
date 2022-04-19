@@ -3,10 +3,10 @@ import { Switch, Route } from "react-router-dom";
 import "./scss/custom.scss";
 import axios from "axios";
 
-import Edit from "./components/edit";
-import CreateEntry from "./components/CreateEntry";
-import EntryList from "./components/entryList";
-import AdminDashboard from "./components/AdminDashboard";
+import Edit from "./components/experimental/edit";
+import CreateEntry from "./components/experimental/CreateEntry";
+import EntryList from "./components/experimental/entryList";
+import AdminDashboard from "./components/experimental/AdminDashboard";
 import Homepage from "./components/Homepage";
 import CompendiumsPage from "./components/CompendiumsPage";
 import CompendiumPage from "./components/CompendiumPage";

@@ -6,20 +6,10 @@ export default function GuideButton({text, opacity}) {
     const [bgColor, setBgColor] = useState(COLORS.interactive)
 
     return (
-        <button style={{
-            position: "relative",
-            marginTop: "50px",
-            backgroundColor: `var(${bgColor})`,
-            padding: "10px 15px 10px 15px",
-            borderRadius: "5px",
-            border: "None",
-            fontFamily: "CallistoMT",
-            color: `var(${COLORS.subtext})`,
-            opacity: opacity,
-            }}
+        <button className="guidebutton" style={{opacity: opacity, backgroundColor: `var(${bgColor})`}}
             onMouseEnter={() => setBgColor(COLORS.title)}
             onMouseLeave={() => setBgColor(COLORS.interactive)}
-            >
+        >
             {text}
         </button>
     )
