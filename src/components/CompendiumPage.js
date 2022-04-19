@@ -6,6 +6,7 @@ import Nav from "./MainNav";
 import Backdrop from "./Backdrop";
 import CompendiumEntry from "./CompendiumEntry";
 import { TITLES, COLORS } from "../constants";
+import EntryGrid from "./EntryGrid";
 
 export default function CompendiumPage(props) {
     // Get the specific compendium
@@ -51,15 +52,8 @@ export default function CompendiumPage(props) {
         <div>
             <Nav />
             <Backdrop>
-                <div className="entry-content" style={{
-                    zIndex: "4",
-                    paddingTop: "50px",
-                    width: "90%",
-                    display: "flex",
-                    flexDirection: "column",
-  
-                }}>
-                    <div className="header-container" style={{display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "end"}}>
+                <div className="page-container">
+                    <div className="entrieshead-container">
                         <EldritchTitle text={TITLES[compendium]} fontClass={"compendium-title-font"} subtitle={entriesResponse.length + " Entries"} />
                         <p className="compendium-note-font" style={{color: `var(${COLORS.subtext})`, width: "500px"}}>
                             The texts within this list are
@@ -69,9 +63,7 @@ export default function CompendiumPage(props) {
                             in the source.
                         </p>
                     </div>
-                    <div className="entry-container" style={{display: "grid"}}>
-                        {entries}
-                    </div>
+                    <EntryGrid entries={entries}/>
                 </div>
             </Backdrop>
         </div>

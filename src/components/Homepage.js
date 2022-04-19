@@ -1,4 +1,3 @@
-import { COLORS } from "../constants";
 import Nav from "./MainNav";
 import OpacityCountup from "./OpacityCountup";
 import GuideButton from "./GuideButton";
@@ -11,18 +10,9 @@ export default function Homepage(props) {
         <>
         <Nav />
         <Backdrop>
-            <div style={{
-                zIndex: 4,
-                display: "flex",
-                alignItems: "center",
-                flexDirection: "column",
-                overflowY: "scroll",
-                width: "100%",
-                paddingTop: "20px",
-                paddingBottom: "50px"
-            }}>
+            <div className="page-container homepage-container">
                 <EldritchTitle text="The Eldritch Archives"/>
-                <p className="eldritch-subtitle-font" style={{width: "650px", paddingLeft:"50px", color: `var(${COLORS.subtext})`}}>
+                <p className="eldritch-subtitle-font homepage-subtitle">
                     A comprehensive collection of references to everything eldritch in horror literature...
                 </p>
                 <OpacityCountup values={{"Associations": 20, "Locations": 30, "Artifacts": 173, "Entities": 5, "People": 64, "Texts": 99}}/>

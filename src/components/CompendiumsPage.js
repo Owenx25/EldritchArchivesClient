@@ -13,28 +13,9 @@ export default function CompendiumsPage(props) {
         <div>
             <Nav />
             <Backdrop>
-                <div style={{
-                    zIndex: 4,
-                    display: "flex",
-                    alignItems: "center",
-                    flexDirection: "column",
-                    overflowY: "scroll",
-                    width: "100%",
-                    paddingTop: "20px",
-                    marginBottom: "20px"
-                    
-                }}>
+                <div className="page-container compendiums-container">
                     <EldritchTitle text="Compendiums"/>
-                    <div className="type-box-container" style={{
-                        zIndex: 4,
-                        display: "flex",
-                        alignItems: "flex-start",
-                        justifyContent: "space-evenly",
-                        flexFlow: "row wrap",
-                        paddingTop: '50px',
-                        width: "75%",
-                        height: "800px"
-                    }}>
+                    <div className="type-box-container">
                         <CompendiumTypeBox image={ICONS.associations} title="Associations" link={`${match.url}/associations`}/>
                         <CompendiumTypeBox image={ICONS.locations} title="Locations" link={`${match.url}/locations`}/>
                         <CompendiumTypeBox image={ICONS.texts} title="Texts" link={`${match.url}/texts`}/>
