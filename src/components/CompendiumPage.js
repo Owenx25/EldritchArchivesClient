@@ -40,10 +40,10 @@ export default function CompendiumPage(props) {
         },
     ]
 
-    // TODO: Use LAZY rendering here so the page doesn't destroy memory
+    // TODO: Use LAZY rendering or pagination here so the page doesn't destroy memory
     let counter = 0
     const entries = []
-    for (const response in entriesResponse) {
+    for (const response of entriesResponse) {
         entries.push(createEntry(response, counter++));
     }
 
@@ -73,6 +73,6 @@ export default function CompendiumPage(props) {
 
 function createEntry(response, counter) {
     return (
-        <CompendiumEntry data={response} key={counter} />
+        <CompendiumEntry entryData={response} key={counter} />
     )
 }

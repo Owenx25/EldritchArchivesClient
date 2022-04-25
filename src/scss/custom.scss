@@ -85,6 +85,22 @@ html {
   font-size: 1.625rem;
 }
 
+.entry-title-font {
+  font-family: "CallistoMT";
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.entry-content-font {
+  font-family: "Goudy Old Style Semi-Expanded";
+  font-size: 1.125rem;
+}
+
+.entry-source-font {
+  font-family: "Goudy Old Style Semi-Expanded";
+  font-size: 1rem;
+}
+
 .page-container {
   z-index: 4;
   display: flex;
@@ -109,7 +125,6 @@ html {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 0 10% 50px 10%;
   padding-bottom: 50px;
 }
 
@@ -225,13 +240,31 @@ html {
   border-radius: 0 0 9px 9px;
 }
 
+.entry-grid {
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 100px;
+  column-gap:0px;
+  width: 80%;
+}
 
-
-@media (min-width: 500px) {
+@media (min-width: 1350px) {
   .entry-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+@media (min-width: 1950px) {
+  .entry-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.entry-title {
+
+}
+
 
 
 
