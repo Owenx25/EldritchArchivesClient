@@ -1,0 +1,24 @@
+.box {
+    width: 550px;
+    height: 400px;
+    place-self: center;
+    opacity: 0.8;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content-container {
+    height: 75%;
+    overflow: hidden;
+}
+
+.tags-container {
+    padding-top: 5px;
+}
+
+.source-container {
+    display: flex;
+    justify-content: center;
+}

@@ -1,5 +1,6 @@
 import CountUp from 'react-countup';
 import { COLORS } from "../constants";
+import styles from "./css/OpacityCountup.module.css";
 
 export default function OpacityCountup({values}) {
     let counter = 0
@@ -8,7 +9,7 @@ export default function OpacityCountup({values}) {
         rows.push(row(key, values[key], counter++));
     }
     return (
-        <div className="mainContainer" style={{display: "flex", position: "relative", flexDirection: "column", paddingTop: "40px"}}>
+        <div className={styles.container}>
             {rows}
         </div>
     );
@@ -16,11 +17,11 @@ export default function OpacityCountup({values}) {
 
 function row(label, value, counter) {
     return (
-        <div key={counter} className="countup-row-container">
-            <div className="counter-box countup-font">
+        <div key={counter} className={styles['row-container']}>
+            <div className={`${styles.box} countup-font`}>
                 <CountUp style={{color: `var(${COLORS.content})`}} end={value} duration={3} useEasing={true} easingFn={easingFn}/>
             </div>
-            <span className="countup-label countup-font">{label}</span>
+            <span className={`${styles.label} countup-font`}>{label}</span>
         </div>
     );
 }

@@ -4,6 +4,7 @@ import { ICONS } from "../constants";
 import CompendiumTypeBox from "./CompendiumTypeBox";
 import { useRouteMatch } from "react-router-dom";
 import EldritchTitle from "./EldritchTitle";
+import styles from "./css/CompendiumsPage.module.css";
 
 
 export default function CompendiumsPage(props) {
@@ -13,9 +14,9 @@ export default function CompendiumsPage(props) {
         <div>
             <Nav />
             <Backdrop>
-                <div className="page-container compendiums-container">
+                <div className="page-container" style={{marginBottom: "20px"}}>
                     <EldritchTitle text="Compendiums"/>
-                    <div className="type-box-container">
+                    <div className={styles['type-box-container']}>
                         <CompendiumTypeBox image={ICONS.associations} title="Associations" link={`${match.url}/associations`}/>
                         <CompendiumTypeBox image={ICONS.locations} title="Locations" link={`${match.url}/locations`}/>
                         <CompendiumTypeBox image={ICONS.texts} title="Texts" link={`${match.url}/texts`}/>

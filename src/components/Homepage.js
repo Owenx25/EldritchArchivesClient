@@ -10,7 +10,7 @@ export default function Homepage(props) {
         <>
         <Nav />
         <Backdrop>
-            <div className="page-container homepage-container">
+            <div className="page-container" style={{paddingBottom: "50px"}}>
                 <EldritchTitle text="The Eldritch Archives"/>
                 <p className="eldritch-subtitle-font homepage-subtitle">
                     A comprehensive collection of references to everything eldritch in horror literature...

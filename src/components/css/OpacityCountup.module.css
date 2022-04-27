@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    padding-top: 40px;
+}
+
+.box {
+    background-color: rgba(29,19,30, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10%;
+    padding: 0 10px 0 10px;
+    height: 50px;
+    width: 75px;
+}
+
+.label {
+    color: var(--innsmouth-blue);
+    padding-left: 100px;
+    min-width: 300px;
+}
+
+.row-container {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-left: 25px;
+}

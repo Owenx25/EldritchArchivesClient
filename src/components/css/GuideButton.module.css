@@ -1,0 +1,9 @@
+.guidebutton {
+    position: relative;
+    margin-top: 50px;
+    padding: 10px 15px 10px 15px;
+    border-radius: 5px;
+    border: None;
+    font-family: CallistoMT;
+    color: var(--nameless-white);
+}

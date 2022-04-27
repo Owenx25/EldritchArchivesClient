@@ -1,0 +1,11 @@
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-top: 59px;
+    background-size: cover;
+    max-width: 100%;
+    height: 100vh;
+
+    background-image: url(../../resources/angled-bookcase.jpg)
+  }

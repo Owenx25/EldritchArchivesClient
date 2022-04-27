@@ -1,14 +1,14 @@
 import Overlay from "./Overlay";
-import background from "../resources/angled-bookcase.jpg";
+import styles from "./css/Backdrop.module.css"
 
 
 export default function Backdrop(props) {
     return (
         <>
-        <div className="backdrop" style={{backgroundImage:`url(${background})`}}>
-            {props.children}
-        </div>
-        <Overlay opacity="0.7" color="black" />
+            <div className={styles.container}>
+                {props.children}
+            </div>
+            <Overlay opacity="0.7" color="black" />
         </>
     )
 }

@@ -7,6 +7,7 @@ import Backdrop from "./Backdrop";
 import CompendiumEntry from "./CompendiumEntry";
 import { TITLES, COLORS } from "../constants";
 import EntryGrid from "./EntryGrid";
+import styles from "./css/CompendiumPage.module.css";
 
 export default function CompendiumPage(props) {
     // Get the specific compendium
@@ -53,7 +54,7 @@ export default function CompendiumPage(props) {
             <Nav />
             <Backdrop>
                 <div className="page-container">
-                    <div className="entrieshead-container">
+                    <div className={styles['heading-container']}>
                         <EldritchTitle text={TITLES[compendium]} fontClass={"compendium-title-font"} subtitle={entriesResponse.length + " Entries"} />
                         <p className="compendium-note-font" style={{color: `var(${COLORS.subtext})`, width: "500px"}}>
                             The texts within this list are
