@@ -1,12 +1,21 @@
 .box {
     width: 550px;
-    height: 400px;
+    height: 450px;
     place-self: center;
     opacity: 0.8;
     padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-left: solid var(--shaggoth-green) 3px;
+
+    background-color: var(--dagon-purple);
+    transition: opacity 0.5s, border-radius 0.3s;
+}
+
+.box:hover {
+    opacity: 1;
+    border-radius: 20px 0 0 20px; 
 }
 
 .content-container {
