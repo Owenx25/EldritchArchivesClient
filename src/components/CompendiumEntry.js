@@ -7,16 +7,16 @@ export default function CompendiumEntry({entryData}) {
     // Could also just save these for modal!
     return (
         <div className={styles.box}>
-            <div style={{height: "100%"}}>
+          
                 <div className={styles['content-container']}>
                     <p>
                         <span className="entry-title-font" style={{color: `var(${COLORS.content})`, marginRight: "5px"}}>{entryData.title}.</span>
                         <span className="entry-content-font" style={{color: `var(${COLORS.subtext})`}}>{entryData.description}</span>
                     </p>
                 </div>
-                <div className={styles['tags-container']}>
+        
+            <div className={styles['tags-container']}>
                     {buildTags(entryData)}
-                </div>
             </div>
             <div className={styles['source-container']}>
                 {buildSource(entryData)}
@@ -37,7 +37,7 @@ function buildSource(entryData) {
 
     return (
         <p className="entry-source-font" style={{color: `var(${COLORS.content})`, margin: 0}}>
-            Source: {sourceElement}
+            {sourceElement}
         </p>
     )
 }
