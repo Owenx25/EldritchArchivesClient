@@ -1,29 +1,29 @@
+import { useState } from "react";
 import { COLORS } from "../constants";
 import styles from "./css/CompendiumEntry.module.css";
 
-export default function CompendiumEntry({entryData}) {
+export default function CompendiumEntry({entryData, onEntryClick}) {
     // May need a few conditional checks in here for specific
     // compendium information like location, or known locations.
     // Could also just save these for modal!
     return (
-        <div className={styles.box}>
-          
-                <div className={styles['content-container']}>
-                    <p>
-                        <span className="entry-title-font" style={{color: `var(${COLORS.content})`, marginRight: "5px"}}>{entryData.title}.</span>
-                        <span className="entry-content-font" style={{color: `var(${COLORS.subtext})`}}>{entryData.description}</span>
-                    </p>
-                </div>
-        
+        <button className={styles.box} onClick={onEntryClick}>
+            <div className={styles['content-container']}>
+                <p>
+                    <span className="entry-title-font" style={{color: `var(${COLORS.content})`, marginRight: "5px"}}>{entryData.title}.</span>
+                    <span className="entry-content-font" style={{color: `var(${COLORS.subtext})`}}>{entryData.description}</span>
+                </p>
+            </div>
             <div className={styles['tags-container']}>
-                    {buildTags(entryData)}
+                {buildTags(entryData)}
             </div>
             <div className={styles['source-container']}>
                 {buildSource(entryData)}
             </div>
-        </div>
-    )
+        </button>
+    );
 }
+
 
 function buildSource(entryData) {
     const source = entryData.source;

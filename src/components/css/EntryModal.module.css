@@ -1,0 +1,45 @@
+.modal {
+    width: 0%;
+    height: 0%;
+    transform: translateY(30%);
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    box-sizing: content-box;
+    visibility: hidden;
+    z-index: 100;
+
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: content-box;
+    background-color: var(--dagon-purple);
+    background-image: linear-gradient(var(--shaggoth-green) 3%, var(--dagon-purple) 30%); 
+
+    transition: transform 1s,
+                visibility 1s,
+                width 1s,
+                height 1s;
+    animation: fadeIn 1s;
+    
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
+
+.show {
+    width: 50%;
+    height: 45%;
+    visibility: visible;
+    animation: fadeIn 1s;
+}
+
+.header {
+    height: 50px;
+}
+
+.footer {
+    height: 50px;
+}

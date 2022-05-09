@@ -106,7 +106,7 @@ html {
   display: flex;
   align-items: center;
   flex-direction: column;
-  overflow-y: scroll;
+  overflow-y: auto;
   width: 100%;
   padding-top: 20px;
 }
@@ -115,6 +115,25 @@ html {
   width: 650px;
   padding-left: 50px;
   color: var(--nameless-white);
+}
+
+// Can't use component modules for this
+// because of bootstrap
+.entry-modal .modal-content {
+  width: 550px;
+  height: 400px;
+  place-self: center;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border-left: solid var(--shaggoth-green) 3px;
+  box-sizing: content-box;
+  border-right: none;
+  border-top: none;
+  border-bottom: none;
+  text-align: left;
+
+  background-color: var(--dagon-purple);
 }
 
 

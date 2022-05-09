@@ -8,6 +8,10 @@
     flex-direction: column;
     border-left: solid var(--shaggoth-green) 3px;
     box-sizing: content-box;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    text-align: left;
 
     background-color: var(--dagon-purple);
     transition: opacity 0.5s, border-radius 0.3s;
@@ -20,7 +24,7 @@
 
 .content-container {
     height: 75%;
-    overflow:scroll;
+    overflow: scroll;
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */    
 }
