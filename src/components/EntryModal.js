@@ -1,4 +1,7 @@
+import { useEffect, useRef, useState } from "react";
+
 import styles from "./css/EntryModal.module.css";
+import Overlay from "./Overlay";
 
 
 // REMOVE
@@ -18,23 +21,39 @@ const sampleData = {
 }
 
 
-
 export default function EntryModal({show, onHide, onShow}) {
-    let showClass = show ? ` ${styles.show}` : "";
+    const wrapperRef = useRef(null);
+    const [showClass, setShowClass] = useState(null);
 
+    useEffect(() => {
+        setShowClass(show ? ` ${styles.show}` : null);
+    }, [show])
+
+    const handleClickOutside = event => {
+        if (showClass && wrapperRef.current && !wrapperRef.current.contains(event.target)) {
+            document.removeEventListener("click", handleClickOutside);
+            setShowClass(null);
+            onHide();
+        }
+    };
+
+    document.addEventListener("click", handleClickOutside, false);    
     onShow();
+    
     return (
-        <div className={styles.modal + showClass}>
-            <div className={styles.header}>
+        <>
+            <div ref={wrapperRef} className={styles.modal + showClass}>
+                <div className={styles.header}>
 
+                </div>
+                <div className={styles.body}>
+
+                </div>
+                <div className={styles.footer}>
+
+                </div>
             </div>
-            <div className={styles.body}>
-
-            </div>
-            <div className={styles.footer}>
-
-            </div>
-
-        </div>
+            {showClass ? <Overlay opacity="0.7" color="black" z="5"/> : null}
+        </>
     );
 }
