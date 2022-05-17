@@ -8,7 +8,6 @@ import CompendiumEntry from "./CompendiumEntry";
 import { TITLES, COLORS } from "../constants";
 import EntryGrid from "./EntryGrid";
 import EntryModal from "./EntryModal";
-import { Modal } from "react-bootstrap";
 import styles from "./css/CompendiumPage.module.css";
 import { useState } from "react";
 
@@ -16,7 +15,7 @@ export default function CompendiumPage(props) {
     // Get the specific compendium
     let { compendium } = useParams();
 
-    let [modalShow, setModalShow] = useState(false);
+    let [modalShow, setModalShow] = useState(null);
     
     // Use compendium to get data from backend, MOCKING for now
     //const entries = axios.get(`/compeniums/${compendium}`);
@@ -91,14 +90,14 @@ export default function CompendiumPage(props) {
                     </div>
                     <EntryGrid entries={entries}/>
                 </div>
-                <EntryModal onHide={() => setModalShow(false)} onShow={() => {}} show={modalShow}/>
+                <EntryModal onHide={() => setModalShow(false)} onShow={() => {}} entryData={modalShow}/>
             </Backdrop>
         </div>
     );
 
     function createEntry(response, counter) {
         return (
-            <CompendiumEntry entryData={response} onEntryClick={() => setModalShow(true)} key={counter} />
+            <CompendiumEntry entryData={response} onEntryClick={(data) => setModalShow(data)} key={counter} />
         )
     }
 

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 import styles from "./css/EntryModal.module.css";
 import Overlay from "./Overlay";
+import Typewriter from 'typewriter-effect';
 
 
 // REMOVE
@@ -20,14 +21,15 @@ const sampleData = {
     }
 }
 
-
-export default function EntryModal({show, onHide, onShow}) {
+export default function EntryModal({entryData, onHide, onShow}) {
     const wrapperRef = useRef(null);
     const [showClass, setShowClass] = useState(null);
+    const [data, setData] = useState(null)
 
     useEffect(() => {
-        setShowClass(show ? ` ${styles.show}` : null);
-    }, [show])
+        setShowClass(entryData ? ` ${styles.show}` : null);
+        setData(entryData ? entryData : null);
+    }, [entryData])
 
     const handleClickOutside = event => {
         if (showClass && wrapperRef.current && !wrapperRef.current.contains(event.target)) {
@@ -39,12 +41,19 @@ export default function EntryModal({show, onHide, onShow}) {
 
     document.addEventListener("click", handleClickOutside, false);    
     onShow();
+
+    const startTypewriter = (typewriter) => {
+        typewriter.typeString(`<span class="entry-title-font"'>${data.title}<span>`)
+            .pauseFor(1000)
+            .typeString(`<span class="entry-title-font"'>.<span>`)
+            .start();
+    }
     
     return (
         <>
             <div ref={wrapperRef} className={styles.modal + showClass}>
                 <div className={styles.header}>
-
+                    { data ? <Typewriter options={{autoStart: false}} onInit={startTypewriter} /> : null } 
                 </div>
                 <div className={styles.body}>
 

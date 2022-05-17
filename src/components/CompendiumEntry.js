@@ -7,7 +7,7 @@ export default function CompendiumEntry({entryData, onEntryClick}) {
     // compendium information like location, or known locations.
     // Could also just save these for modal!
     return (
-        <button className={styles.box} onClick={onEntryClick}>
+        <button className={styles.box} onClick={() => onEntryClick(entryData)}>
             <div className={styles['content-container']}>
                 <p>
                     <span className="entry-title-font" style={{color: `var(${COLORS.content})`, marginRight: "5px"}}>{entryData.title}.</span>
