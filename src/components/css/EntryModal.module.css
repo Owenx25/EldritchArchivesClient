@@ -9,7 +9,7 @@
     visibility: hidden;
     z-index: 100;
 
-    padding: 10px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     box-sizing: content-box;
@@ -37,11 +37,14 @@
 }
 
 .header {
-    padding-top: 20px;
-    height: 50px;
+    padding-top: 5px;
     align-self: center;
 }
 
+.body {
+    padding-top: 30px;
+}
+
 .footer {
-    height: 50px;
+    height: auto;
 }
