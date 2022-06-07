@@ -4,6 +4,9 @@ import styles from "./css/EntryModal.module.css";
 import Overlay from "./Overlay";
 import Typewriter from 'typewriter-effect';
 
+import { buildTags } from "./CompendiumEntry";
+import TagList from "./TagList";
+
 export default function EntryModal({entryData, onHide, onShow}) {
     const wrapperRef = useRef(null);
     const [showClass, setShowClass] = useState(null);
@@ -42,7 +45,7 @@ export default function EntryModal({entryData, onHide, onShow}) {
                     { data ? <p className="entry-content-font" style={{fontSize: "1.3rem"}}>{data.description}</p> : null}
                 </div>
                 <div className={styles.footer}>
-
+                    { data ? <TagList tags={data.tags} fontSize="1.3rem"/> : null }
                 </div>
             </div>
             {showClass ? <Overlay opacity="0.7" color="black" z="5"/> : null}

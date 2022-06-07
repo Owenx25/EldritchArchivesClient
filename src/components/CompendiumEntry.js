@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { COLORS } from "../constants";
 import styles from "./css/CompendiumEntry.module.css";
+import TagList from "./TagList";
 
 export default function CompendiumEntry({entryData, onEntryClick}) {
     // May need a few conditional checks in here for specific
@@ -14,9 +15,7 @@ export default function CompendiumEntry({entryData, onEntryClick}) {
                     <span className="entry-content-font" style={{color: `var(${COLORS.subtext})`}}>{entryData.description}</span>
                 </p>
             </div>
-            <div className={styles['tags-container']}>
-                {buildTags(entryData)}
-            </div>
+            <TagList tags={entryData.tags}/>
             <div className={styles['source-container']}>
                 {buildSource(entryData)}
             </div>
@@ -34,32 +33,9 @@ function buildSource(entryData) {
         sourceElement = <span><i>{source.title}</i> ({source.year}), {source.author}</span>
     } 
 
-
     return (
         <p className="entry-source-font" style={{color: `var(${COLORS.content})`, margin: 0}}>
             {sourceElement}
         </p>
     )
-}
-
-function capitalize(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
-function buildTags(entryData) {
-    const tagElements = [];
-
-    for (const [label,value] of Object.entries(entryData.tags)) {
-        tagElements.push(
-            <p style={{margin: 0, lineHeight: "1.3"}} key={label}>
-                <span className="entry-content-font" style={{color: `var(${COLORS.content})`}}>
-                    {capitalize(label) + ': '}
-                </span>
-                <span className="entry-content-font" style={{color: `var(${COLORS.subtext})`}}>
-                    {value}
-                </span>
-            </p>
-        )
-    }
-    return tagElements;
 }

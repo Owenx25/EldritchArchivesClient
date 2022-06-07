@@ -1,5 +1,5 @@
 .box {
-    width: 550px;
+    width: 500px;
     height: 400px;
     place-self: center;
     opacity: 0.8;
@@ -30,10 +30,6 @@
 }
 .content-container::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
-}
-
-.tags-container {
-    padding-top: 5px;
 }
 
 .source-container {
