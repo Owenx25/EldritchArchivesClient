@@ -1,6 +1,6 @@
 import { Navbar, Nav } from "react-bootstrap";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
  
 export default function MainNav({style}) {
   return (
@@ -11,8 +11,9 @@ export default function MainNav({style}) {
       top: "0",
       zIndex: "10"
     }}>
-      <Navbar.Brand to="/" style={{paddingLeft: "6em", marginRight: "1.5rem", fontFamily:"CallistoMT", fontSize: "20px"}}>Eldritch Archives</Navbar.Brand>
-
+      <Link to="/" style={{ textDecoration: 'none' }}>
+        <Navbar.Brand style={{paddingLeft: "6em", marginRight: "1.5rem", fontFamily:"CallistoMT", fontSize: "20px"}}>Eldritch Archives</Navbar.Brand>
+      </Link>
       <Nav style={{paddingLeft: "1em"}}>
         <NavLink className="nav-link nav-item nav-font" aria-current="page" style={{paddingRight:"2em"}} to="/compendiums">Compendiums</NavLink>
         <NavLink className="nav-link nav-item nav-font" to="/authors" style={{paddingRight:"2em"}}>Authors</NavLink>
