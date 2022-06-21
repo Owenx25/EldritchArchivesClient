@@ -10,6 +10,9 @@ import AdminDashboard from "./components/experimental/AdminDashboard";
 import Homepage from "./components/Homepage";
 import CompendiumsPage from "./components/CompendiumsPage";
 import CompendiumPage from "./components/CompendiumPage";
+import AuthorsPage from "./components/AuthorsPage";
+import AboutPage from "./components/AboutPage";
+import ContactPage from "./components/ContactPage";
 
 // TODO: Update with real backend
 axios.defaults.baseURL = "https://my backend"
@@ -23,7 +26,15 @@ const App = () => {
       <Route exact path="/compendiums">
         <CompendiumsPage />
       </Route>
-      
+      <Route exact path="/authors">
+        <AuthorsPage />
+      </Route>
+      <Route exact path="/about">
+        <AboutPage />
+      </Route>
+      <Route exact path="/contact">
+        <ContactPage />
+      </Route>
       <Route exact path="/admin/entry">
         <EntryList />
       </Route>
